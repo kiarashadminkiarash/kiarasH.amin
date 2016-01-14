@@ -5,7 +5,7 @@ do
 local function create_group(msg)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
-        return "You're not admin!"
+        return "💢شما ادمین گلوبال نیستید💢"
     end
     local group_creator = msg.from.print_name
     create_group_chat (group_creator, group_name, ok_cb, false)
@@ -268,7 +268,7 @@ function run(msg, matches)
 		    local group_member_lock = settings.lock_member
 		    local user = 'user#id'..msg.action.user.id
 		    local chat = 'chat#id'..msg.to.id
-		    if group_member_lock == 'yes' then
+		    if on member == 'yes' then
 		        chat_del_user(chat, user, ok_cb, true)
 		    elseif group_member_lock == 'no' then
                 return nil
